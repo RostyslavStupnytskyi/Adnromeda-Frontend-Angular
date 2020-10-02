@@ -1,16 +1,14 @@
+<app-category-creator></app-category-creator>
 <table>
   <tr>
-    <td>Id</td>
+    <td>id</td>
     <td>Назва</td>
     <td>Фото</td>
     <td></td>
     <td></td>
   </tr>
-  <tr *ngFor="let category of this.categories">
-    <td>{{category.id}}</td>
-    <td><input type="text" [value]="category.title"></td>
-    <td>{{category.imageName}}</td>
-    <td><button>Редагувати</button></td>
-    <td><button>Видалити</button></td>
+  <tr *ngFor="let cat of categories">
+    <app-category-table-element  [category]="cat"></app-category-table-element>
   </tr>
+
 </table>
