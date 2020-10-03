@@ -1,5 +1,9 @@
-  <td>{{category.id}}</td>
-  <td><input type="text" [value]="category.title"></td>
-  <td>{{category.imageName}}</td>
-  <td><button>Редагувати</button></td>
-  <td><button>Видалити</button></td>
+
+<td>{{category.id}}</td>
+<td>
+  <input type="file" accept="image/*">{{category.imageName}}
+  <img [src]="imageURL" [alt]="">
+</td>
+<td><input type="text" [value]="category.title" [disabled]="!inUpdate"></td>
+<td><button (click)="updateButtonClick()">{{updateButtonCaption}}</button></td>
+<td><button>Видалити</button></td>

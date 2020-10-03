@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Category} from '../../entity/category/category';
@@ -9,7 +9,7 @@ import {GlobalConstants} from '../../common/global-constants';
 })
 export class CategoryService {
   private categoriesUrl = GlobalConstants.API_URL + 'category';
-
+  test: any;
   constructor(private httpClient: HttpClient) {
 
   }
@@ -18,7 +18,22 @@ export class CategoryService {
     return this.httpClient.get<Category[]>(this.categoriesUrl);
   }
 
-  // public postCategory(title: string, image: string):void {
-  //   this.httpClient.post(categoriesUrl, )
-  // }
+  public postCategory(category: Category): void {
+    const headers = {
+      'Content-Type': 'application/json'
+    };
+    const body = {
+      title: category.title,
+      image: category.imageName
+    };
+
+    console.log(category);
+
+    // this.httpClient.post<Category>(this.categoriesUrl, body, {headers});
+    this.httpClient.post<Category>(this.categoriesUrl, body).subscribe(data => {
+      this.test = data;
+    });
+    console.log(this.test);
+    console.log('posted');
+  }
 }

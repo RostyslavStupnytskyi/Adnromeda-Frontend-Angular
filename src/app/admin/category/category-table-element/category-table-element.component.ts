@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Category} from '../../../entity/category/category';
+import {GlobalConstants} from '../../../common/global-constants';
 
 @Component({
   selector: 'app-category-table-element',
@@ -7,11 +9,28 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CategoryTableElementComponent implements OnInit {
 
-  @Input() category;
+  updateButtonCaption = 'Редагувати';
+  inUpdate = false;
+  @Input() category: Category;
+  imageURL: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.imageURL  = this.category.imageName ? GlobalConstants.API_URL + 'image/category/' + this.category.imageName : '';
   }
+
+  updateButtonClick(): void {
+    if (this.inUpdate) {
+
+      this.updateButtonCaption = 'Редагувати';
+    } else {
+
+      this.updateButtonCaption = 'Зберегти';
+    }
+    this.inUpdate = !this.inUpdate;
+  }
+
 
 }
