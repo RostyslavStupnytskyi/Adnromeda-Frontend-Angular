@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { CategoryCreatorComponent } from './admin/category/category-creator/category-creator.component';
 import {CategoryTableElementComponent} from './admin/category/category-table-element/category-table-element.component';
 import {FormsModule} from '@angular/forms';
+import {AdminModule} from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,11 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
