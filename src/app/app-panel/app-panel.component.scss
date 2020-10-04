@@ -1,0 +1,44 @@
+
+$audiowideFont : 'Audiowide', cursive;
+//$montserratFont : 'Montserrat Alternates', sans-serif;
+//$robotoFont :'Roboto', sans-serif;
+//$playFont : 'Play', sans-serif;
+
+*{
+  color: #fffffe;
+  //color: #d92323;
+  //color: #232946;
+  font-size: 30px;
+
+}
+#main-container{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  //background-color: #fffffe;
+  //background-color: #141c42;
+  background-color: #4496cb78;
+  margin: 0;
+  justify-content: center;
+  position: relative;
+}
+
+#logo-container{
+  font-family: $audiowideFont;
+  font-size: 50px;
+}
+
+.divider{
+  width: 45%;
+}
+
+.component{
+  display: block;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+#my-profile-title{
+
+}
+
