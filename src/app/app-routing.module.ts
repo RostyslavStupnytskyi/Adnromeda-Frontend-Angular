@@ -3,10 +3,14 @@ import {Routes, RouterModule} from '@angular/router';
 import {AdminModule} from './admin/admin.module';
 
 import {AdminComponent} from './admin/admin.component';
+import {AppComponent} from './app.component';
 
 const routes: Routes = [
   {path: 'admin',
-  component: AdminComponent}
+  loadChildren: () => {
+    return import('./admin/admin.module').then(m => m.AdminModule);
+  }},
+  {path: '', component: AppComponent}
 ];
 
 @NgModule({

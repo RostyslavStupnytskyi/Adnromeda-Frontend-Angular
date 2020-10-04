@@ -1,0 +1,50 @@
+*{
+  box-sizing: border-box;
+}
+
+#main-container{
+  width: 75%;
+  margin: 5% auto;
+  min-height: 500px;
+  display: flex;
+}
+
+#admin-routes-container{
+  width: 20%;
+  height: 100%;
+  padding: 0;
+  background-color: #eebbc3;
+}
+
+#admin-router-content{
+  width: 80%;
+  height: 100%;
+  background-color: #fffffe;
+}
+
+a{
+  color: #232946;
+  font-family: 'Play', sans-serif;
+  text-decoration: none;
+  font-size: 25px;
+  border: 12px solid #eebbc3;
+  display: inline-flex;
+  width: 100%;
+  height: 70px;
+  outline: none;
+  text-align: center;
+  background-color: #eebbc3;
+  align-items: center;
+  transition: all .8s;
+  padding: 5px 35px;
+}
+
+a:hover{
+  color: #eebbc3;
+  border-width: 8px;
+  background:  #232946 ;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 5px 40px;
+}
+

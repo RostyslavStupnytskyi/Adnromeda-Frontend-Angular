@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<div id="main-container">
+  <div id="admin-routes-container">
+    <a href="" [routerLink]="'category'">КАТЕГОРІЇ</a>
+    <a href="" [routerLink]="'subcategory'">ПІДКАТЕГОРІЇ</a>
+<!--    <a href="" [routerLink]="'list'">АДМІНИ</a>-->
+    <a href="" [routerLink]="'moderators'">МОДЕРАТОРИ</a>
+  </div>
+<!--  <app-vertical-divider colorBorder="#000000"></app-vertical-divider>-->
+  <div id="admin-router-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

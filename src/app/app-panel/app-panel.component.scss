@@ -5,7 +5,6 @@ $audiowideFont : 'Audiowide', cursive;
 //$playFont : 'Play', sans-serif;
 
 *{
-  color: #fffffe;
   //color: #d92323;
   //color: #232946;
   font-size: 30px;
@@ -17,10 +16,13 @@ $audiowideFont : 'Audiowide', cursive;
   width: 100%;
   //background-color: #fffffe;
   //background-color: #141c42;
+  top: 0;
+  left: 0;
   background-color: #4496cb78;
   margin: 0;
   justify-content: center;
-  position: relative;
+  //position: relative;
+  position: fixed;
 }
 
 #logo-container{

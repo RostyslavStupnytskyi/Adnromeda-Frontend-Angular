@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { AdminComponent } from './admin.component';
 import {AdminRoutingModule} from './admin-routing.module';;
-import {AppModule} from '../app.module';
+import { CategoryComponent } from './components/category/category.component';
+import { SubcategoryComponent } from './components/subcategory/subcategory.component';
+import { ModeratorsComponent } from './components/moderators/moderators.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, ],
+  declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent, ],
   imports: [
     CommonModule,
-    AdminRoutingModule,
-    AppModule
+    AdminRoutingModule
   ]
 })
 export class AdminModule { }

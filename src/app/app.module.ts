@@ -8,22 +8,22 @@ import {FormsModule} from '@angular/forms';
 import {AdminModule} from './admin/admin.module';
 import {AdminComponent} from './admin/admin.component';
 import { AppPanelComponent } from './app-panel/app-panel.component';
+import { VerticalDividerComponent } from './common/vertical-divider/vertical-divider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppPanelComponent
+    AppPanelComponent,
+    VerticalDividerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    // AdminModule
   ],
   providers: [],
-  exports: [
-    AppPanelComponent
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
