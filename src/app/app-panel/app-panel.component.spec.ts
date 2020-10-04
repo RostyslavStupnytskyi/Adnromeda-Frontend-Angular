@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CategoryTableComponent } from './category-table.component';
+import { AppPanelComponent } from './app-panel.component';
 
-describe('CategoryTableComponent', () => {
-  let component: CategoryTableComponent;
-  let fixture: ComponentFixture<CategoryTableComponent>;
+describe('AppPanelComponent', () => {
+  let component: AppPanelComponent;
+  let fixture: ComponentFixture<AppPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CategoryTableComponent ]
+      declarations: [ AppPanelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CategoryTableComponent);
+    fixture = TestBed.createComponent(AppPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

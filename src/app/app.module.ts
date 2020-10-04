@@ -3,26 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CategoryTableComponent } from './admin/category/category-table/category-table.component';
 import {HttpClientModule} from '@angular/common/http';
-import { CategoryCreatorComponent } from './admin/category/category-creator/category-creator.component';
-import {CategoryTableElementComponent} from './admin/category/category-table-element/category-table-element.component';
 import {FormsModule} from '@angular/forms';
 import {AdminModule} from './admin/admin.module';
+import {AdminComponent} from './admin/admin.component';
+import { AppPanelComponent } from './app-panel/app-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoryTableComponent,
-    CategoryCreatorComponent,
-    CategoryTableElementComponent
+    AppPanelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    AdminModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -26,14 +26,8 @@ export class CategoryService {
       title: category.title,
       image: category.imageName
     };
-
-    console.log(category);
-
-    // this.httpClient.post<Category>(this.categoriesUrl, body, {headers});
     this.httpClient.post<Category>(this.categoriesUrl, body).subscribe(data => {
       this.test = data;
     });
-    console.log(this.test);
-    console.log('posted');
   }
 }
