@@ -9,6 +9,7 @@ import {AdminModule} from './admin/admin.module';
 import {AdminComponent} from './admin/admin.component';
 import { AppPanelComponent } from './app-panel/app-panel.component';
 import { VerticalDividerComponent } from './common/vertical-divider/vertical-divider.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { VerticalDividerComponent } from './common/vertical-divider/vertical-div
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
     // AdminModule
   ],
   providers: [],

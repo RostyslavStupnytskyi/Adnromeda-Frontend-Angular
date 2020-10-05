@@ -1,11 +1,19 @@
 <div id="main-container">
   <div id="admin-routes-container">
-    <a href="" [routerLink]="'category'">КАТЕГОРІЇ</a>
-    <a href="" [routerLink]="'subcategory'">ПІДКАТЕГОРІЇ</a>
-<!--    <a href="" [routerLink]="'list'">АДМІНИ</a>-->
-    <a href="" [routerLink]="'moderators'">МОДЕРАТОРИ</a>
+    <ul>
+      <li *ngFor="let tab of tabs">
+        <a [routerLink]="tab.link" (click)="tabClick(); tab.clicked = true;"
+        [ngClass]="{
+        clicked: tab.clicked
+        }">{{tab.label}}</a>
+      </li>
+      <!--      <li class="ul-elem"><a href="" [routerLink]="'category'">КАТЕГОРІЇ</a></li>-->
+      <!--      <li class="ul-elem"><a href="" [routerLink]="'subcategory'">ПІДКАТЕГОРІЇ</a></li>-->
+      <!--      &lt;!&ndash;    <a href="" [routerLink]="'list'">АДМІНИ</a>&ndash;&gt;-->
+      <!--      <li class="ul-elem"><a href="" [routerLink]="'moderators'">МОДЕРАТОРИ</a></li>-->
+    </ul>
   </div>
-<!--  <app-vertical-divider colorBorder="#000000"></app-vertical-divider>-->
+  <!--  <app-vertical-divider colorBorder="#000000"></app-vertical-divider>-->
   <div id="admin-router-content">
     <router-outlet></router-outlet>
   </div>

@@ -3,8 +3,9 @@
 }
 
 #main-container{
-  width: 75%;
-  margin: 5% auto;
+  width: 100%;
+  height: 100%;
+  margin: 4% auto;
   min-height: 500px;
   display: flex;
 }
@@ -12,39 +13,60 @@
 #admin-routes-container{
   width: 20%;
   height: 100%;
-  padding: 0;
-  background-color: #eebbc3;
+  background-color: #212121;
+  padding-top: 20px;
+  ul{
+    list-style: none;
+  }
 }
 
 #admin-router-content{
   width: 80%;
   height: 100%;
-  background-color: #fffffe;
+  background-color: #343333;
+  padding: 30px;
 }
 
 a{
-  color: #232946;
+  color: #eebbc3;
   font-family: 'Play', sans-serif;
   text-decoration: none;
   font-size: 25px;
-  border: 12px solid #eebbc3;
+  //border: 8px solid #eebbc3;
   display: inline-flex;
-  width: 100%;
   height: 70px;
+  width: 100%;
   outline: none;
   text-align: center;
-  background-color: #eebbc3;
+  background-color:#212121;
   align-items: center;
-  transition: all .8s;
+  transition: padding .8s, color,background .4s;
   padding: 5px 35px;
 }
 
+.clicked{
+  color: #fffffe;
+  //border-width: 8px;
+  background: #575757;
+  text-decoration: underline;
+  padding: 5px 50px;
+}
+
 a:hover{
-  color: #eebbc3;
-  border-width: 8px;
-  background:  #232946 ;
   cursor: pointer;
   text-decoration: underline;
-  padding: 5px 40px;
+  padding: 5px 45px;
 }
+
+a:hover:not(.clicked){
+  color: #eebbc3;
+  background: #535050;
+}
+
+//a:hover{
+//  background: #c698a0;
+//  cursor: pointer;
+//  text-decoration: underline;
+//  padding: 5px 10px;
+//}
 

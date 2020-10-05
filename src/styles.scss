@@ -9,18 +9,17 @@ $montserratFont : 'Montserrat Alternates', sans-serif;
 $robotoFont :'Roboto', sans-serif;
 $playFont : 'Play', sans-serif;
 *{
-  //font-family: 'Roboto', sans-serif;
   font-family: $robotoFont;
-  //font-family: 'Montserrat Alternates', sans-serif;
-  //font-family: 'Audiowide', cursive;
   color: #fffffe;
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body{
+  margin: 0;
   background-color: $bgColor;
 }
+html, body { height: 100%; }
