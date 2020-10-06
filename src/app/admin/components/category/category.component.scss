@@ -7,6 +7,31 @@ table {
   width: 100%;
 }
 
+th.mat-sort-header-sorted {
+  color: black;
+}
+
 div{
   background-color: #343333;
+  font-size: 20px;
+}
+
+.category-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.action-button{
+  padding: 5px 20px;
+  font-size: 30px;
+  color: black;
+  border-radius: 5px;
+}
+.action-button:hover{
+  cursor: pointer;
+}
+
+.table-header-text{
+  font-size: 20px;
 }

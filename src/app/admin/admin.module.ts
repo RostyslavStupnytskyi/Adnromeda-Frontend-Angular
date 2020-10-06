@@ -8,15 +8,16 @@ import { ModeratorsComponent } from './components/moderators/moderators.componen
 import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
 import {AdminPaginator} from './common/admin-paginator';
 import {MatTableModule} from '@angular/material/table';
-
+import {MatSort, MatSortModule} from '@angular/material/sort';
 
 @NgModule({
-  declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent, ],
+  declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useClass: AdminPaginator}
