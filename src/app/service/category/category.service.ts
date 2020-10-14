@@ -10,12 +10,20 @@ import {GlobalConstants} from '../../common/global-constants';
 export class CategoryService {
   private categoriesUrl = GlobalConstants.API_URL + 'category';
   test: any;
+
   constructor(private httpClient: HttpClient) {
 
   }
 
   public getCategories(): Observable<Array<Category>> {
     return this.httpClient.get<Category[]>(this.categoriesUrl);
+  }
+
+  // http://localhost:8080/category?direction=ASC&field=id&page=0&size=10
+  public getCategoriesPage(pageSize: number, page: number, field: string, inc: boolean): Observable<any> {
+    const direction = inc ? 'ASC' : 'DESC';
+    const url = this.categoriesUrl + '?direction' + direction + '&field=' + field + '&page=' + page + '&size=' + pageSize;
+    return this.httpClient.get<Category[]>(url);
   }
 
   public postCategory(category: Category): void {

@@ -1,0 +1,15 @@
+<div id="paginator-container">
+Елементів на сторінку
+  <select id="" id="page-size-select" [(ngModel)]="pageSize" [value]="pageSize" (change)="log()">
+    <option  *ngFor="let size of pageSizes" [value]="size" class="page-size-option">{{size}}</option>
+  </select>
+  {{rangeLabel}}
+  <button id="first-page-button" class="button" (click)="firstButtonClick()" [ngClass]="{
+          limitButton: !lastPageButtons
+          }">|<</button>
+  <button id="previous-page-button" class="button" (click)="previousButtonClick()"><</button>
+  <button id="next-page-button" class="button" (click)="nextButtonClick()">></button>
+  <button id="last-page-button" class="button" (click)="lastButtonClick()" [ngClass]="{
+          limitButton: !lastPageButtons
+          }">>|</button>
+</div>

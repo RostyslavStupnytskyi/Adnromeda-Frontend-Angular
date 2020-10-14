@@ -5,7 +5,7 @@
           [ngClass]="{
         block_last: tab.block_end
         }">
-        <a class="route-link" [routerLink]="tab.link">{{tab.label}}</a>
+        <a class="route-link" [routerLink]="tab.link" [routerLinkActive]="['active-route-link']">{{tab.label}}</a>
       </li>
     </ul>
   </div>

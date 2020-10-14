@@ -1,0 +1,34 @@
+*{
+  color: #CDCBD0;
+}
+
+#page-size-select{
+  border:none;
+  border-bottom: 1px solid #fffffe;
+  background: none;
+  width: 50px;
+  outline: none;
+}
+
+.page-size-option{
+  background-color: #000000;
+}
+
+.button{
+  background: none;
+  border:none;
+  font-size: 25px;
+  color: #CDCBD0;
+  margin-left: 20px;
+  outline: none;
+}
+
+.button:hover{
+  cursor: pointer;
+  color: #fffffe;
+  outline: none;
+}
+
+.limitButton{
+  display: none;
+}

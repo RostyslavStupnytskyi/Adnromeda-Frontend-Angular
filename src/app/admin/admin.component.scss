@@ -1,4 +1,4 @@
-* {
+d* {
   box-sizing: border-box;
   font-family: Roboto;
   font-style: normal;
@@ -8,7 +8,6 @@
   display: flex;
   margin: 100px auto 0;
   width: 80%;
-  //background-color: #fff;
   min-height: 900px;
 }
 
@@ -21,23 +20,31 @@
 #admin-content{
   width: 80%;
   background-color: #000000;
+  padding: 15px;
 }
 
 #admin-routes-list{
   list-style: none;
-  font-size: 35px;
+  font-size: 20px;
 }
 
 .admin-routes-links-element{
   height: 50px;
+  line-height: 50px;
   padding: 5px;
+  justify-content: center;
 }
 
 .route-link{
   text-decoration: none;
   font-weight: 300;
   color: #94929C;
-  padding-left: 30pxvation ;
+  padding-left: 30px;
+}
+
+.active-route-link{
+  color: #f7f4ff;
+  font-weight: 500;
 }
 
 .block_last{
