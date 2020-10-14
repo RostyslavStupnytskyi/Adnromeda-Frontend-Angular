@@ -1,72 +1,45 @@
-*{
+* {
   box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
 }
 
-#main-container{
-  width: 100%;
-  //height: 100%;
-  margin: 4% auto;
-  min-height: 500px;
+#main-container {
   display: flex;
+  margin: 100px auto 0;
+  width: 80%;
+  //background-color: #fff;
+  min-height: 900px;
 }
 
 #admin-routes-container{
   width: 20%;
-  //height: 100%;
-  background-color: #212121;
-  padding-top: 20px;
-  ul{
-    list-style: none;
-  }
+  background-color: #1A1C22;
+  padding-top: 30px;
 }
 
-#admin-router-content{
+#admin-content{
   width: 80%;
-  height: 100%;
-  background-color: #343333;
-  padding: 30px;
+  background-color: #000000;
 }
 
-a{
-  color: #eebbc3;
-  font-family: 'Play', sans-serif;
+#admin-routes-list{
+  list-style: none;
+  font-size: 35px;
+}
+
+.admin-routes-links-element{
+  height: 50px;
+  padding: 5px;
+}
+
+.route-link{
   text-decoration: none;
-  font-size: 25px;
-  //border: 8px solid #eebbc3;
-  display: inline-flex;
-  height: 70px;
-  width: 100%;
-  outline: none;
-  text-align: center;
-  background-color:#212121;
-  align-items: center;
-  transition: padding .8s, color,background .4s;
-  padding: 5px 35px;
+  font-weight: 300;
+  color: #94929C;
+  padding-left: 30pxvation ;
 }
 
-.clicked{
-  color: #fffffe;
-  //border-width: 8px;
-  background: #575757;
-  text-decoration: underline;
-  padding: 5px 50px;
+.block_last{
+  border-bottom: 1px solid black;
 }
-
-a:hover{
-  cursor: pointer;
-  text-decoration: underline;
-  padding: 5px 45px;
-}
-
-a:hover:not(.clicked){
-  color: #eebbc3;
-  background: #535050;
-}
-
-//a:hover{
-//  background: #c698a0;
-//  cursor: pointer;
-//  text-decoration: underline;
-//  padding: 5px 10px;
-//}
-
