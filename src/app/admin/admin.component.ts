@@ -21,9 +21,5 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  tabClick(): void{
-    this.tabs.forEach((t) => {
-      t.clicked = false;
-    });
-  }
+
 }

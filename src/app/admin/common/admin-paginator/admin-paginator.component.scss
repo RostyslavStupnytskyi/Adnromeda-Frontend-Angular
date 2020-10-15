@@ -1,34 +1,35 @@
-*{
+* {
   color: #CDCBD0;
 }
 
-#page-size-select{
-  border:none;
+#page-size-select {
+  border: none;
   border-bottom: 1px solid #fffffe;
   background: none;
   width: 50px;
   outline: none;
+  font-size: 15px;
 }
 
-.page-size-option{
+.page-size-option {
   background-color: #000000;
 }
 
-.button{
+.button {
   background: none;
-  border:none;
+  border: none;
   font-size: 25px;
   color: #CDCBD0;
   margin-left: 20px;
   outline: none;
 }
 
-.button:hover{
+.button:hover {
   cursor: pointer;
   color: #fffffe;
   outline: none;
 }
 
-.limitButton{
+.limitButton {
   display: none;
 }

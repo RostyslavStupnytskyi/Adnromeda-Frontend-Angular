@@ -1,13 +1,21 @@
 <div id="wrapper">
-<div id="search-paginator-container">
-  <div id="search-container">
-    <input type="text" id="search-input" placeholder="Введіть назву категорії "><button id="search-button">Знайти</button>
-  </div>
-  <div id="paginator-container">
-    <div id="paginator">
-    <app-admin-paginator [pageSizes]="[10,20]" [(ngModel)]="totalPages" [totalPages]="totalPages" ></app-admin-paginator>
+  <div id="search-paginator-container">
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="Введіть назву категорії ">
+      <button id="search-button">Знайти</button>
+    </div>
+    <div id="paginator-container">
+      <div id="paginator">
+        <app-admin-paginator [pageSizes]="pageSizes" *ngIf="totalElements"
+                             (pageEmmit)="handlePageChange($event)"
+                             [totalElements]="totalElements"
+                             [totalPages]="totalPages"
+        >
+          <!--      [(ngModel)]="page" [pageNumber]="page"    -->
+          <!--[(ngModel)]="totalPages" [totalPages]="totalPages"-->
+        </app-admin-paginator>
+      </div>
     </div>
   </div>
-</div>
 </div>
 <!--<app-admin-paginator [pageSizes]="[1,2,3]"></app-admin-paginator>-->
