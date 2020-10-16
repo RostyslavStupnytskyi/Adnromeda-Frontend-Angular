@@ -2,18 +2,41 @@
   <div id="search-paginator-container">
     <div id="search-container">
       <input type="text" id="search-input" placeholder="Введіть назву категорії ">
-      <button id="search-button">Знайти</button>
+      <button id="search-button" class="button">Знайти</button>
     </div>
     <div id="paginator-container">
       <div id="paginator">
         <app-admin-paginator [pageSizes]="pageSizes" *ngIf="totalElements"
                              (pageEmmit)="handlePageChange($event)"
                              [totalElements]="totalElements"
-                             [totalPages]="totalPages"
-        >
+                             [totalPages]="totalPages">
         </app-admin-paginator>
       </div>
     </div>
+  </div>
+  <div id="content-container">
+    <table class="admin-table">
+      <tr>
+        <th>Фото</th>
+        <th>Назва</th>
+        <th>#</th>
+        <th>
+          <button class="button" id="add-category-button" (click)="openDialog()">Додати категорію</button>
+        </th>
+      </tr>
+      <tr *ngFor="let category of categories">
+        <td>
+          <div class="category-image-container">
+            <img class="category-image" *ngIf="category.imageName" [src]="getImage(category.imageName)"></div>
+        </td>
+        <td>{{category.title}}</td>
+        <td>{{category.id}}</td>
+        <td>
+          <button class="button">Редагувати</button>
+          <button class="button">Видалити</button>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
 <!--<app-admin-paginator [pageSizes]="[1,2,3]"></app-admin-paginator>-->

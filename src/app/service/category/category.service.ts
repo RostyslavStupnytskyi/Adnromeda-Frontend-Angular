@@ -26,6 +26,11 @@ export class CategoryService {
     return this.httpClient.get<Category[]>(url);
   }
 
+  public getCategoryImage(id: number): Observable<any> {
+    const url = this.categoriesUrl + '/img?id=' + id;
+    return this.httpClient.get<any>(url);
+  }
+
   public postCategory(category: Category): void {
     const headers = {
       'Content-Type': 'application/json'

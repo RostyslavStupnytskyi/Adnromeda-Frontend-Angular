@@ -2,13 +2,36 @@
   color: #CDCBD0;
 }
 
+#wrapper{
+
+}
+
+#paginator-container{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  //height: 56px;
+  //position: absolute;
+}
+
+#page-size-container{
+  display: flex;
+  align-items: baseline;
+  margin-right: 30px;
+}
+
+#range-label-container{
+  margin-right: 20px;
+}
+
 #page-size-select {
   border: none;
   border-bottom: 1px solid #fffffe;
   background: none;
   width: 50px;
   outline: none;
-  font-size: 15px;
+  //font-size: 15px;
 }
 
 .page-size-option {

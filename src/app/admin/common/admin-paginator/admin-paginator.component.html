@@ -1,17 +1,23 @@
-<div id="paginator-container">
-  Елементів на сторінку
-  <select id="page-size-select" [(ngModel)]="pageSize" [value]="pageSize" (change)="changePageSize()">
-    <option *ngFor="let size of pageSizes" [value]="size" class="page-size-option">{{size}}</option>
-  </select>
-  {{rangeLabel}}
-  <button id="first-page-button" class="button" (click)="firstButtonClick()" [ngClass]="{
+<div id="wrapper">
+  <div id="paginator-container">
+    <div id="page-size-container">
+      Елементів на сторінку
+      <select id="page-size-select" [(ngModel)]="pageSize" [value]="pageSize" (change)="changePageSize()">
+        <option *ngFor="let size of pageSizes" [value]="size" class="page-size-option">{{size}}</option>
+      </select>
+    </div>
+    <div id="range-label-container">
+      {{rangeLabel}}
+    </div>
+    <button id="first-page-button" class="button" (click)="firstButtonClick()" [ngClass]="{
           limitButton: !lastPageButtons
           }">|<
-  </button>
-  <button id="previous-page-button" class="button" (click)="previousButtonClick()"><</button>
-  <button id="next-page-button" class="button" (click)="nextButtonClick()">></button>
-  <button id="last-page-button" class="button" (click)="lastButtonClick()" [ngClass]="{
+    </button>
+    <button id="previous-page-button" class="button" (click)="previousButtonClick()"><</button>
+    <button id="next-page-button" class="button" (click)="nextButtonClick()">></button>
+    <button id="last-page-button" class="button" (click)="lastButtonClick()" [ngClass]="{
           limitButton: !lastPageButtons
           }">>|
-  </button>
+    </button>
+  </div>
 </div>
