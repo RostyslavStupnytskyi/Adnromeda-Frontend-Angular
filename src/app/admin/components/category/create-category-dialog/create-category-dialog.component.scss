@@ -1,0 +1,46 @@
+.category-dialog{
+  width: 40%;
+}
+
+#image-container{
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #50504f;
+
+  img{
+    width: 100%;
+    //border-radius: 50%;
+  }
+
+  span{
+    font-size: 80px;
+  }
+
+  input{
+    display: none;
+  }
+
+}
+
+#image-container:hover{
+  cursor: pointer;
+  background-color: #4d4d4d;
+}
+
+#create-container{
+  display: flex;
+  align-items: center;
+}
+
+.dialog-input-group{
+  width: 500px;
+  margin: 10px 10px 10px 40px;
+}
+
+
+
+

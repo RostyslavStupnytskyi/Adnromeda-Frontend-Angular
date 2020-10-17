@@ -31,7 +31,12 @@ export class CategoryService {
     return this.httpClient.get<any>(url);
   }
 
-  public postCategory(category: Category): void {
+  public getOne(id: number): Observable<Category> {
+    const url = this.categoriesUrl + '/one?id=' + id;
+    return this.httpClient.get<Category>(url);
+  }
+
+  public postCategory(category: Category): Observable<number> {
     const headers = {
       'Content-Type': 'application/json'
     };
@@ -39,8 +44,15 @@ export class CategoryService {
       title: category.title,
       image: category.imageName
     };
-    this.httpClient.post<Category>(this.categoriesUrl, body).subscribe(data => {
-      this.test = data;
-    });
+    return this.httpClient.post<number>(this.categoriesUrl, body);
+  }
+
+  public putCategory(category: Category): Observable<any> {
+    const url = this.categoriesUrl + '?id=' + category.id;
+    const body = {
+      title: category.title,
+      image: category.imageName
+    };
+    return this.httpClient.put<number>(url, body);
   }
 }

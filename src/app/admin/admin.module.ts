@@ -13,9 +13,11 @@ import {MatSortModule} from '@angular/material/sort';
 import {UsersComponent} from './components/users/users.component';
 import {AdminsComponent} from './components/admins/admins.component';
 import {AdminPaginatorComponent} from './common/admin-paginator/admin-paginator.component';
-import {CreateCategoryDialogComponent} from './components/category/create-category-dialog/create-category-dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import { CreateCategoryDialogComponent } from './components/category/create-category-dialog/create-category-dialog.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent, UsersComponent, AdminsComponent, AdminPaginatorComponent, CreateCategoryDialogComponent],
@@ -26,8 +28,10 @@ import {MatButtonModule} from '@angular/material/button';
     MatTableModule,
     MatSortModule,
     FormsModule,
-    MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatIconModule
   ]
 })
 export class AdminModule {

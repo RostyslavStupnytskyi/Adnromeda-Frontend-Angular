@@ -1,9 +1,35 @@
-<h2 mat-dialog-title>{{title}}</h2>
-<mat-dialog-content class="mat-typography">
-  <input type="text" placeholder="Назва категорії">
-  <input type="file">
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Скасувати</button>
-  <button mat-button cdkFocusInitial>{{buttonTitle}}</button>
-</mat-dialog-actions>
+<div class="dialog-background" [ngClass]="{
+  opened: open,
+  closed: !open
+  }" (click)="clickWindow($event)" id="modal">
+  <div class="dialog category-dialog">
+    <div class="dialog-header">
+      <span class="dialog-header-label">{{headerLabel}}</span>
+    </div>
+    <div class="dialog-content">
+      <div class="dialog-block">
+        <form action="">
+          <div id="create-container">
+            <div id="image-container"  matTooltip="ДОДАТИ ФОТО" (click)="onImageClick()">
+              <img *ngIf="image" [src]="image">
+              <span *ngIf="!image" class="add-image">+</span>
+              <input type="file" accept="image/*" id="category-image-input" (change)="handleUpload($event)" #imageInput>
+            </div>
+            <div id="name-input-container">
+              <div class="dialog-input-group">
+                <input type="input" class="dialog-input" placeholder="Назва категорії" id='category-title-input'  autocomplete="off"
+                       [ngModelOptions]="{standalone: true}" [(ngModel)]="value" [value]="value" required/>
+                <label for="category-title-input" class="dialog-input-label">Назва категорії</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="dialog-footer">
+      <button class="dialog-button dialog-main-button" (click)="createButtonClick()">{{buttonLabel}}</button>
+      <button (click)="closeButtonClick()" class="dialog-button dialog-close-button">Скасувати</button>
+    </div>
+  </div>
+</div>
+

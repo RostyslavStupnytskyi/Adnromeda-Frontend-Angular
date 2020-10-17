@@ -22,7 +22,6 @@ export class AdminPaginatorComponent implements OnInit {
   ngOnInit(): void {
     this.pageSize = this.pageSizes[0];
     this.totalPages = this.totalElements / this.pageSize;
-    console.log('total : ' + this.totalElements);
     this.changeLabel();
   }
 
@@ -37,13 +36,14 @@ export class AdminPaginatorComponent implements OnInit {
     this.pageNumber = 0;
     this.totalPages = this.totalElements / this.pageSize;
     this.changeLabel();
+    this.emmitChanges();
   }
 
   previousButtonClick(): void {
     if (this.pageNumber > 0) {
       this.pageNumber--;
-      this.changeLabel();
     }
+    this.changeLabel();
     this.emmitChanges();
   }
 
@@ -62,8 +62,8 @@ export class AdminPaginatorComponent implements OnInit {
   nextButtonClick(): void {
     if (this.pageNumber < this.totalPages - 1) {
       this.pageNumber++;
-      this.changeLabel();
     }
+    this.changeLabel();
     this.emmitChanges();
   }
 

@@ -1,3 +1,5 @@
+<app-create-category-dialog [openDialog]="openDialogWindow" (isOpened)="dialogChange($event)"
+                            [create]="categoryUpdateId" (changes)="reloadTable($event)"></app-create-category-dialog>
 <div id="wrapper">
   <div id="search-paginator-container">
     <div id="search-container">
@@ -21,7 +23,7 @@
         <th>Назва</th>
         <th>#</th>
         <th>
-          <button class="button" id="add-category-button" (click)="openDialog()">Додати категорію</button>
+          <button class="button" id="add-category-button" (click)="createCategoryButtonClick()">Додати категорію</button>
         </th>
       </tr>
       <tr *ngFor="let category of categories">
@@ -32,11 +34,10 @@
         <td>{{category.title}}</td>
         <td>{{category.id}}</td>
         <td>
-          <button class="button">Редагувати</button>
-          <button class="button">Видалити</button>
+          <button class="button" [value]="category.id" (click)="clickUpdateButton(category.id)">Редагувати</button>
+<!--          <button class="button" [value]="category.id" (click)="clickDeleteButton(category.id)">Видалити</button>-->
         </td>
       </tr>
     </table>
   </div>
 </div>
-<!--<app-admin-paginator [pageSizes]="[1,2,3]"></app-admin-paginator>-->
