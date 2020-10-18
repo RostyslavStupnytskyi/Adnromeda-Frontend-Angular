@@ -46,6 +46,9 @@ export class CategoryService {
     };
     return this.httpClient.post<number>(this.categoriesUrl, body);
   }
+  public deleteCategory(id: number): Observable<any> {
+    return this.httpClient.delete(this.categoriesUrl + '?id=' + id);
+  }
 
   public putCategory(category: Category): Observable<any> {
     const url = this.categoriesUrl + '?id=' + category.id;

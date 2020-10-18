@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import {AdminModule} from './admin/admin.module';
-import {AdminComponent} from './admin/admin.component';
+
 import { AppPanelComponent } from './app-panel/app-panel.component';
 import { VerticalDividerComponent } from './common/vertical-divider/vertical-divider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     AppPanelComponent,
-    VerticalDividerComponent,
+    VerticalDividerComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     // AdminModule
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

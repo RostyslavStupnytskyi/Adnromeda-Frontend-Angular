@@ -23,7 +23,9 @@ export class CategoryComponent implements OnInit {
   field = 'id'; // поле за яким буде йти сортування сторінки
   increment = true; // true - за зростанням , false - за спаданням
   openDialogWindow: boolean; //змінна для оприділення закритого/відкритого модального вікна
+  openConfirmWindow: boolean;
   categoryUpdateId = null;
+  confirmDialogText: string;
   categories: Category[];
 
 
@@ -81,5 +83,20 @@ export class CategoryComponent implements OnInit {
 
   reloadTable($event: any): void {
     this.getCategoriesPage();
+  }
+
+  clickDeleteButton(id: number): void {
+    this.categoryService.getOne(id).subscribe((c) => {
+      this.confirmDialogText = 'Видалити категорію "' + c.title + '" ?';
+      this.openConfirmDialog();
+    });
+  }
+
+  openConfirmDialog(): void {
+    this.openConfirmWindow = true;
+  }
+
+  dialogConfirmChange($event: boolean): void {
+    this.openConfirmWindow = $event;
   }
 }

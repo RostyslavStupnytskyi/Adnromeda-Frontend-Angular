@@ -18,21 +18,22 @@ import { CreateCategoryDialogComponent } from './components/category/create-cate
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import { ConfirmingDialogComponent } from './common/confirming-dialog/confirming-dialog.component';
 
 @NgModule({
-  declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent, UsersComponent, AdminsComponent, AdminPaginatorComponent, CreateCategoryDialogComponent],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatSortModule,
-    FormsModule,
-    MatButtonModule,
-    MatTooltipModule,
-    MatFormFieldModule,
-    MatIconModule
-  ]
+  declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent, UsersComponent, AdminsComponent, AdminPaginatorComponent, CreateCategoryDialogComponent, ConfirmingDialogComponent],
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatSortModule,
+        FormsModule,
+        MatButtonModule,
+        MatTooltipModule,
+        MatFormFieldModule,
+        MatIconModule
+    ]
 })
 export class AdminModule {
 }

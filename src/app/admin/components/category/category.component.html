@@ -1,5 +1,7 @@
 <app-create-category-dialog [openDialog]="openDialogWindow" (isOpened)="dialogChange($event)"
                             [create]="categoryUpdateId" (changes)="reloadTable($event)"></app-create-category-dialog>
+
+<app-confirming-dialog [openDialog]="openConfirmWindow"  [title]="confirmDialogText" (isOpened)="dialogConfirmChange($event)"></app-confirming-dialog>
 <div id="wrapper">
   <div id="search-paginator-container">
     <div id="search-container">
@@ -34,8 +36,8 @@
         <td>{{category.title}}</td>
         <td>{{category.id}}</td>
         <td>
-          <button class="button" [value]="category.id" (click)="clickUpdateButton(category.id)">Редагувати</button>
-<!--          <button class="button" [value]="category.id" (click)="clickDeleteButton(category.id)">Видалити</button>-->
+          <button class="button" (click)="clickUpdateButton(category.id)">Редагувати</button>
+          <button class="button" [value]="category.id" (click)="clickDeleteButton(category.id)">Видалити</button>
         </td>
       </tr>
     </table>

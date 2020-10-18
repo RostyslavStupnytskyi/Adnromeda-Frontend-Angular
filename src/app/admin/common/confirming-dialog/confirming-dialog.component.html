@@ -1,0 +1,14 @@
+<div class="dialog-background"  [ngClass]="{
+  opened: open,
+  closed: !open
+  }" (click)="clickWindow($event)">
+  <div class="dialog">
+    <div class="dialog-block">
+      <span class="dialog-header-label">{{title}}</span>
+    </div>
+    <div class="dialog-footer">
+      <button class="dialog-button dialog-close-button" (click)="clickYesButton()">Так</button>
+      <button class="dialog-button dialog-main-button" (click)="closeButtonClick()">Ні</button>
+    </div>
+  </div>
+</div>
