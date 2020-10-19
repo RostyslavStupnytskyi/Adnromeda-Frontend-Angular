@@ -1,0 +1,21 @@
+<div class="dialog-header">
+  <span class="dialog-header-label" mat-dialog-title>{{headerLabel}}</span>
+</div>
+<div id="create-container">
+  <div id="image-container"  matTooltip="ДОДАТИ ФОТО" (click)="onImageClick()">
+    <img *ngIf="image" [src]="image">
+    <span *ngIf="!image" class="add-image">+</span>
+    <input type="file" accept="image/*" id="category-image-input" (change)="handleUpload($event)" #imageInput>
+  </div>
+  <div id="name-input-container">
+    <div class="dialog-input-group">
+      <input type="input" class="dialog-input" placeholder="Назва категорії" id='category-title-input'  autocomplete="off"
+             [ngModelOptions]="{standalone: true}" [(ngModel)]="categoryTitle" [value]="categoryTitle" required/>
+      <label for="category-title-input" class="dialog-input-label">Назва категорії</label>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="dialog-footer">
+  <button class="dialog-button dialog-main-button" (click)="createButtonClick()">{{buttonLabel}}</button>
+  <button (click)="onNoClick()" class="dialog-button dialog-close-button">Скасувати</button>
+</div>

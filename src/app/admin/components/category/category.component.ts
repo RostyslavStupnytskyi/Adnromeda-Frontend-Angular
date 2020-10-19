@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {CategoryService} from '../../../service/category/category.service';
 import {GlobalConstants} from '../../../common/global-constants';
 import {Category} from '../../../entity/category/category';
+import {MatDialog} from '@angular/material/dialog';
+import {CategoryDialogComponent} from './category-dialog/category-dialog.component';
+import {ConfirmDialogComponent} from '../../common/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-category',
@@ -22,14 +25,48 @@ export class CategoryComponent implements OnInit {
 
   field = 'id'; // поле за яким буде йти сортування сторінки
   increment = true; // true - за зростанням , false - за спаданням
-  openDialogWindow: boolean; //змінна для оприділення закритого/відкритого модального вікна
-  openConfirmWindow: boolean;
-  categoryUpdateId = null;
-  confirmDialogText: string;
+
   categories: Category[];
 
 
-  constructor(private categoryService: CategoryService) {
+  constructor(private categoryService: CategoryService, public dialog: MatDialog) {
+
+  }
+
+  createButtonClick(): void {
+    this.openDialog(null);
+  }
+
+  clickUpdateButton(id: number): void {
+    this.openDialog(id);
+  }
+
+  openDialog(id: number): void {
+    if (id === null) {
+
+      const dialogRef = this.dialog.open(CategoryDialogComponent, {
+        data: null
+      });
+
+      dialogRef.afterClosed().subscribe(result => { //дії пілся закриття вікна
+        this.reloadTable();
+      });
+
+    } else {
+      this.categoryService.getOne(id).subscribe((c) => {
+        this.categoryService.getCategoryImage(id).subscribe((img) => {
+          c.imageName = img.image;
+          const dialogRef = this.dialog.open(CategoryDialogComponent, {
+            data: c
+          });
+
+          dialogRef.afterClosed().subscribe(result => {
+            this.reloadTable();
+          });
+
+        });
+      });
+    }
 
   }
 
@@ -39,19 +76,6 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategoriesPage();
-  }
-
-  createCategoryButtonClick(): void {
-    this.categoryUpdateId = null;
-    this.openDialog();
-  }
-
-  dialogChange($event: boolean): void {
-    this.openDialogWindow = $event;
-  }
-
-  openDialog(): void {
-    this.openDialogWindow = true;
   }
 
   //  запит на отримання сторінки з сервера
@@ -75,28 +99,29 @@ export class CategoryComponent implements OnInit {
     this.getCategoriesPage();
   }
 
-
-  clickUpdateButton(id: number): void {
-    this.categoryUpdateId = id;
-    this.openDialog();
-  }
-
-  reloadTable($event: any): void {
+  reloadTable(): void {
     this.getCategoriesPage();
   }
 
-  clickDeleteButton(id: number): void {
-    this.categoryService.getOne(id).subscribe((c) => {
-      this.confirmDialogText = 'Видалити категорію "' + c.title + '" ?';
-      this.openConfirmDialog();
+
+  clickDeleteButton(id: number) {
+    this.categoryService.getOne(id).subscribe((category) => {
+      const data = {
+        message: 'Ви дійсно хочете видалити категорію "' + category.title + '" ?'
+      };
+      const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+        width: '600px',
+        data
+      });
+
+      dialogRef.afterClosed().subscribe(result => { //дії пілся закриття вікна
+        console.log(result.result);
+        if (result.result) {
+          this.categoryService.deleteCategory(id).subscribe(() => {
+            this.reloadTable();
+          });
+        }
+      });
     });
-  }
-
-  openConfirmDialog(): void {
-    this.openConfirmWindow = true;
-  }
-
-  dialogConfirmChange($event: boolean): void {
-    this.openConfirmWindow = $event;
   }
 }

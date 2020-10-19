@@ -1,7 +1,3 @@
-<app-create-category-dialog [openDialog]="openDialogWindow" (isOpened)="dialogChange($event)"
-                            [create]="categoryUpdateId" (changes)="reloadTable($event)"></app-create-category-dialog>
-
-<app-confirming-dialog [openDialog]="openConfirmWindow"  [title]="confirmDialogText" (isOpened)="dialogConfirmChange($event)"></app-confirming-dialog>
 <div id="wrapper">
   <div id="search-paginator-container">
     <div id="search-container">
@@ -25,7 +21,7 @@
         <th>Назва</th>
         <th>#</th>
         <th>
-          <button class="button" id="add-category-button" (click)="createCategoryButtonClick()">Додати категорію</button>
+          <button class="button" id="add-category-button" (click)="createButtonClick()">Додати категорію</button>
         </th>
       </tr>
       <tr *ngFor="let category of categories">
