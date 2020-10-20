@@ -104,7 +104,7 @@ export class CategoryComponent implements OnInit {
   }
 
 
-  clickDeleteButton(id: number) {
+  clickDeleteButton(id: number): void {
     this.categoryService.getOne(id).subscribe((category) => {
       const data = {
         message: 'Ви дійсно хочете видалити категорію "' + category.title + '" ?'

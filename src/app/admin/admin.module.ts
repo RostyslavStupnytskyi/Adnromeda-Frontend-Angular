@@ -21,9 +21,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {CategoryDialogComponent} from './components/category/category-dialog/category-dialog.component';
 import {MatInputModule} from '@angular/material/input';
 import { ConfirmDialogComponent } from './common/confirm-dialog/confirm-dialog.component';
+import { SubcategoryDialogComponent } from './components/subcategory/subcategory-dialog/subcategory-dialog.component';
 
 @NgModule({
-  declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent, UsersComponent, AdminsComponent, AdminPaginatorComponent, CategoryDialogComponent, ConfirmDialogComponent],
+  declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent, UsersComponent, AdminsComponent, AdminPaginatorComponent, CategoryDialogComponent, ConfirmDialogComponent, SubcategoryDialogComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

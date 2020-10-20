@@ -16,7 +16,8 @@ export class CategoryService {
   }
 
   public getCategories(): Observable<Array<Category>> {
-    return this.httpClient.get<Category[]>(this.categoriesUrl);
+    const url = this.categoriesUrl + '/all';
+    return this.httpClient.get<Category[]>(url);
   }
 
   // http://localhost:8080/category?direction=ASC&field=id&page=0&size=10
@@ -46,6 +47,7 @@ export class CategoryService {
     };
     return this.httpClient.post<number>(this.categoriesUrl, body);
   }
+
   public deleteCategory(id: number): Observable<any> {
     return this.httpClient.delete(this.categoriesUrl + '?id=' + id);
   }

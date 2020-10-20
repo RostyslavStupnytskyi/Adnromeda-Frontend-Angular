@@ -1,1 +1,34 @@
-<p>subcategory works!</p>
+<div id="wrapper">
+  <div class="search-paginator-container">
+    <input type="text" placeholder="Назва підкатегорії" class="search-input">
+    <button class="button">Знайти</button>
+    <select id="">
+      <option *ngFor="let category of categories" value="">{{category.title}}</option>
+    </select>
+        <app-admin-paginator [pageSizes]="pageSizes" *ngIf="totalElements >= 0"
+                             (pageEmmit)="handlePageChange($event)"
+                             [totalElements]="totalElements"
+                             [totalPages]="totalPages">
+        </app-admin-paginator>
+  </div>
+  <div id="content-container">
+    <table class="admin-table">
+      <tr>
+        <th>#</th>
+        <th>Назва</th>
+        <th>Категорія</th>
+        <th><button class="button" (click)="createSubcategoryButtonClick()">Створити підкатегорію</button></th>
+      </tr>
+      <tr *ngFor="let subcategory of subcategories">
+        <td>{{subcategory.id}}</td>
+        <td>{{subcategory.title}}</td>
+        <td *ngIf="subcategory.category">{{subcategory.category.title}}</td>
+        <td>
+          <button class="button" (click)="updateSubcategoryButtonClick(subcategory)">Редагувати</button>
+          <button class="button" (click)="clickDeleteButton(subcategory)">Видалити</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+

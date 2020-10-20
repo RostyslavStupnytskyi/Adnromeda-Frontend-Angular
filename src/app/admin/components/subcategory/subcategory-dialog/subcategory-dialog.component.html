@@ -1,0 +1,16 @@
+<div class="dialog-header">
+  <span class="dialog-header-label">{{headerLabel}}</span>
+</div>
+<select id="" [value]="subcategory.categoryId" [(ngModel)]="subcategory.categoryId">
+  <option value="0" selected disabled>Категорія</option>
+  <option *ngFor="let category of categories" [value]="category.id">{{category.title}}</option>
+</select>
+
+<div class="dialog-input-group">
+  <input type="input" class="dialog-input" [(ngModel)]="subcategory.title" [value]="subcategory.title" placeholder="Назва категорії" id="subcategory-input" autocomplete="off" required/>
+  <label for="subcategory-input" class="dialog-input-label">Назва категорії</label>
+</div>
+<div class="dialog-footer">
+  <button class="dialog-button dialog-main-button" (click)="saveButtonClick()">{{buttonLabel}}</button>
+  <button class="dialog-button dialog-close-button" (click)="onNoClick()">Скасувати</button>
+</div>
