@@ -1,1 +1,19 @@
-<p>registration works!</p>
+<mat-horizontal-stepper [linear]="true" #stepper>
+  <mat-step label="Перший крок">
+    <div class="step-div">
+      <p>Тут типу логін пароль</p>
+      <button matStepperNext>Далі</button>
+    </div>
+  </mat-step>
+  <mat-step label="Другий крок">
+    <p>Тут юзернейм і аватарка</p>
+    <button matStepperNext>Далі</button>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Фінальний крок</ng-template>
+      <p>Тут фіналочка ( підтвердження імейлу і тд)</p>
+      <button matStepperPrevious>Підтверити</button>
+<!--      <button (click)="stepper.reset()"></button>-->
+  </mat-step>
+</mat-horizontal-stepper>
+
