@@ -8,10 +8,18 @@ import {Category} from './entity/category/category';
 
 const routes: Routes = [
   // {path: '', component: AppComponent},
-  {path: 'admin',
-  loadChildren: () => {
-    return import('./admin/admin.module').then(m => m.AdminModule);
-  }},
+  {
+    path: 'admin',
+    loadChildren: () => {
+      return import('./admin/admin.module').then(m => m.AdminModule);
+    }
+  },
+  {
+    path: 'user',
+    loadChildren: () => {
+      return import('./user/user.module').then(m => m.UserModule);
+    }
+  }
   // {path: '', redirectTo: '/admin'}
 ];
 
@@ -20,5 +28,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  @Input()category: Category;
+  @Input() category: Category;
 }

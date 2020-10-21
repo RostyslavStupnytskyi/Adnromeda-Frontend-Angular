@@ -6,7 +6,6 @@ import {AdminComponent} from './admin.component';
 import {SubcategoryComponent} from './components/subcategory/subcategory.component';
 import {ModeratorsComponent} from './components/moderators/moderators.component';
 import {AdminsComponent} from './components/admins/admins.component';
-import {UsersComponent} from './components/users/users.component';
 
 const routes: Routes = [
   {
@@ -17,7 +16,7 @@ const routes: Routes = [
       {path: 'subcategory', component: SubcategoryComponent},
       {path: 'moderators', component: ModeratorsComponent},
       {path: 'admins', component: AdminsComponent},
-      {path: 'users', component: UsersComponent}
+      // {path: 'users', component: UsersComponent}
     ]
   }
 ];

@@ -10,7 +10,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {FormsModule} from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
-import {UsersComponent} from './components/users/users.component';
 import {AdminsComponent} from './components/admins/admins.component';
 import {AdminPaginatorComponent} from './common/admin-paginator/admin-paginator.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -24,7 +23,7 @@ import { ConfirmDialogComponent } from './common/confirm-dialog/confirm-dialog.c
 import { SubcategoryDialogComponent } from './components/subcategory/subcategory-dialog/subcategory-dialog.component';
 
 @NgModule({
-  declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent, UsersComponent, AdminsComponent, AdminPaginatorComponent, CategoryDialogComponent, ConfirmDialogComponent, SubcategoryDialogComponent],
+  declarations: [AdminComponent, CategoryComponent, SubcategoryComponent, ModeratorsComponent, AdminsComponent, AdminPaginatorComponent, CategoryDialogComponent, ConfirmDialogComponent, SubcategoryDialogComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
