@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AccountRegistration} from '../../entity/dto/account/account-registration';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() {}
+  constructor() {
+  }
+
+  account = new AccountRegistration();
 
   ngOnInit() {
 
   }
+
+
 }

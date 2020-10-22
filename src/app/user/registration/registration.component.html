@@ -1,8 +1,16 @@
 <mat-horizontal-stepper [linear]="true" #stepper>
   <mat-step label="Перший крок">
     <div class="step-div">
-      <p>Тут типу логін пароль</p>
-      <button matStepperNext>Далі</button>
+      <h2>1.Введіть свою електронну адресу та придумайте пароль</h2>
+      <div class="form__group">
+        <input type="text" class="form__input" id="email-input" placeholder="email" required="" />
+        <label for="email-input" class="form__label">email</label>
+      </div>
+      <div class="form__group">
+        <input type="text" class="form__input" id="password-input" placeholder="пароль" required="" />
+        <label for="password-input" class="form__label">пароль</label>
+      </div>
+      <button matStepperNext>Продовжити</button>
     </div>
   </mat-step>
   <mat-step label="Другий крок">

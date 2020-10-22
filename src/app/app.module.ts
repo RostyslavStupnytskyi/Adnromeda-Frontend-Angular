@@ -9,7 +9,8 @@ import {FormsModule} from '@angular/forms';
 import { AppPanelComponent } from './app-panel/app-panel.component';
 import { VerticalDividerComponent } from './common/vertical-divider/vertical-divider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CookieService } from 'ngx-cookie-service';
+//
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     // AdminModule
   ],
-  providers: [],
+  providers: [CookieService],
   exports: [
   ],
   bootstrap: [AppComponent]

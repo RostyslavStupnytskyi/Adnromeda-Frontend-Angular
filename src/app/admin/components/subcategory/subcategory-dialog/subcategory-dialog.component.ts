@@ -8,7 +8,7 @@ import {Subcategory} from '../../../../entity/subcategory/subcategory';
 @Component({
   selector: 'app-subcategory-dialog',
   templateUrl: './subcategory-dialog.component.html',
-  styleUrls: ['./subcategory-dialog.component.scss', '../../../../common/styles/dialog-window.scss']
+  styleUrls: ['./subcategory-dialog.component.scss', '../../../../common/styles/dialog-window.scss', '../../../../common/styles/input.scss']
 })
 export class SubcategoryDialogComponent {
 

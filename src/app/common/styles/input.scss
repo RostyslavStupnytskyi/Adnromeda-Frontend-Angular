@@ -1,0 +1,61 @@
+$primary: #11998e;
+$gray: #9b9b9b;
+$white: #fff;
+
+.dialog-input-group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  //width: 50%;
+}
+
+.dialog-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .dialog-input-label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.dialog-input-label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.dialog-input:focus {
+  ~ .dialog-input-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image-slice: 1;
+}
+/* reset input */
+.dialog-input{
+  &:required,&:invalid { box-shadow:none; }
+}

@@ -7,7 +7,7 @@ import {GlobalConstants} from '../../../../common/global-constants';
 @Component({
   selector: 'app-category-dialog',
   templateUrl: './category-dialog.component.html',
-  styleUrls: ['./category-dialog.component.scss', '../../../../common/styles/dialog-window.scss']
+  styleUrls: ['./category-dialog.component.scss', '../../../../common/styles/dialog-window.scss', '../../../../common/styles/input.scss']
 })
 export class CategoryDialogComponent {
 
