@@ -10,12 +10,15 @@ import { AppPanelComponent } from './app-panel/app-panel.component';
 import { VerticalDividerComponent } from './common/vertical-divider/vertical-divider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
+import { AccountDialogComponent } from './app-panel/registarion-dialog/account-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 //
 @NgModule({
   declarations: [
     AppComponent,
     AppPanelComponent,
-    VerticalDividerComponent
+    VerticalDividerComponent,
+    AccountDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,7 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatDialogModule
     // AdminModule
   ],
   providers: [CookieService],

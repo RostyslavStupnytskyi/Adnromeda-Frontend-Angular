@@ -1,12 +1,18 @@
-
 <div id="main-container">
   <div id="logo-container" class="component">Andromeda</div>
   <div class="divider">
     <a href="" [routerLink]="'admin'">Адмін</a>
   </div>
   <div id="user-info-container" class="component">
-   <i class="fa fa-user"></i> | <span id="my-profile-title">Мій профіль</span>
-    <a [routerLink]="'user'">Реєстрація</a>
+    <div id="my-profile-title">
+      <span>Мій профіль</span>
+    </div>
+    <div class="profile-menu">
+      <p>Початок</p>
+      <button>Увійти</button>
+      <button (click)="openRegistration()">Зареєструватися</button>
+    </div>
   </div>
+
 </div>
 <!--skipLocationChange-->

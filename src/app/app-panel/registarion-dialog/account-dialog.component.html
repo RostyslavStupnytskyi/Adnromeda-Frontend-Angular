@@ -1,0 +1,14 @@
+<div class="Logo-container">
+Andromeda
+</div>
+<div class="status-container">
+  <button (click)="makeRegistrationForm()">Реєстрація</button>
+  <button (click)="makeLoginForm()">Вхід</button>
+</div>
+<div class="input-form">
+  <input type="text" class="input" placeholder="Email" [(ngModel)]="account.login">
+  <input [type]="passwordInputType" class="input" [(ngModel)]="account.password" placeholder="Пароль"><button (click)="changePasswordType()">o</button>
+</div>
+<div>
+  <button (click)="mainButtonClick()">{{buttonLabel}}</button>
+</div>

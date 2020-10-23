@@ -4,6 +4,8 @@ $audiowideFont : 'Audiowide', cursive;
 //$robotoFont :'Roboto', sans-serif;
 //$playFont : 'Play', sans-serif;
 
+$navHeight : 60px;
+
 *{
   //color: #d92323;
   //color: #232946;
@@ -12,7 +14,7 @@ $audiowideFont : 'Audiowide', cursive;
 }
 #main-container{
   display: flex;
-  height: 80px;
+  height: $navHeight;
   width: 100%;
   //background-color: #fffffe;
   //background-color: #141c42;
@@ -35,13 +37,41 @@ $audiowideFont : 'Audiowide', cursive;
   width: 45%;
 }
 
+button{
+  font-size: 20px;
+}
+
 .component{
   display: block;
   margin-top:auto;
   margin-bottom:auto;
 }
 
-#my-profile-title{
-
+#user-info-container{
+  height: 100%;
 }
 
+#my-profile-title{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-menu{
+  background-color: #323232;
+  //color: #1A1C22;
+  display: none;
+  position: absolute;
+  padding-top: 20px;
+  height: 500px;
+  top: $navHeight;
+}
+
+.profile-menu:hover{
+  display: block;
+}
+
+#my-profile-title:hover + .profile-menu{
+display: block;
+}
