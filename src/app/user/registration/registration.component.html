@@ -1,27 +1,17 @@
-<mat-horizontal-stepper [linear]="true" #stepper>
-  <mat-step label="Перший крок">
-    <div class="step-div">
-      <h2>1.Введіть свою електронну адресу та придумайте пароль</h2>
-      <div class="form__group">
-        <input type="text" class="form__input" id="email-input" placeholder="email" required="" />
-        <label for="email-input" class="form__label">email</label>
-      </div>
-      <div class="form__group">
-        <input type="text" class="form__input" id="password-input" placeholder="пароль" required="" />
-        <label for="password-input" class="form__label">пароль</label>
-      </div>
-      <button matStepperNext>Продовжити</button>
+<div class="container">
+  <div class="status-container">
+      <span>Заповніть поля, та вперед за покупками</span>
+  </div>
+  <div class="login-password-form">
+    <div class="input-holder">
+      <label for="login-input">Електронна адреса</label>
+      <input type="email" id="login-input" class="input">
     </div>
-  </mat-step>
-  <mat-step label="Другий крок">
-    <p>Тут юзернейм і аватарка</p>
-    <button matStepperNext>Далі</button>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Фінальний крок</ng-template>
-      <p>Тут фіналочка ( підтвердження імейлу і тд)</p>
-      <button matStepperPrevious>Підтверити</button>
-<!--      <button (click)="stepper.reset()"></button>-->
-  </mat-step>
-</mat-horizontal-stepper>
+    <div class="input-holder">
+      <label for="password-input">Пароль</label>
+      <input type="password" id="password-input" class="input">
+    </div>
+    <button class="button">Продовжити</button>
+  </div>
+</div>
 

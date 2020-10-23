@@ -1,67 +1,42 @@
-button{
-  border: none;
+.input{
+  font-size: 25px;
   outline: none;
-  background: none;
-  font-size: 30px;
-}
-
-mat-horizontal-stepper{
-  min-height: 700px;
-}
-
-.step-div{
-  //margin: 40px auto;
-  //width: 40%;
-}
-
-
-
-.dialog-input{
-  font-size: 20px;
-  width: 300px;
-}
-
-//*,
-//*::after,
-//*::before {
-//  margin: 0;
-//  padding: 0;
-//  box-sizing: inherit;
-//  font-size: 62,5%;
-//}
-
-.form__label {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
-  //margin-left: 2rem;
-  margin-top: 0.7rem;
-  display: block;
-  transition: all 0.3s;
-  transform: translateY(0rem);
-}
-
-.form__input {
-  color: #333;
-  font-size: 1.2rem;
-  margin: 0;
-  padding: 10px;
-  border-radius: 0.2rem;
-  background-color: rgb(54, 54, 54);
-  color: #fffffe;
+  background-color: #2d2d2d;
   border: none;
-  width: 90%;
-  display: block;
-  border-bottom: 0.3rem solid transparent;
-  transition: all 0.3s;
-}
-
-.form__input:placeholder-shown + .form__label {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(-10px);
-  transform: translateY(-10px);
-}
-
-.form__group{
+  padding: 10px;
   width: 300px;
+  border-radius: 10px;
+}
+
+.button{
+  font-size: 20px;
+  background: none;
+  border: 4px solid #fffffe;
+  border-radius: 10px;
+  width: 200px;
+  padding: 10px;
+  font-weight: 600;
+  outline: none;
+}
+
+.button:hover{
+  cursor: pointer;
+  background-color: #fffffe;
+  color: #1A1C22;
+}
+
+.input-holder{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.login-password-form{
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  margin: 5px 5px 5px 15px;
 }
