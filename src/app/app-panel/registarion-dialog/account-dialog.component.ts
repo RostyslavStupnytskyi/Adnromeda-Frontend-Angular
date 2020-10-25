@@ -51,10 +51,19 @@ export class AccountDialogComponent {
 
 
   mainButtonClick(): void {
-    console.log(this.account);
-    this.accountService.registerUser(this.account).subscribe((response) => {
-      this.cookieService.set('user_token', response.token);
-      console.log(response);
-    });
+    if (this.registration){
+      this.accountService.registerUser(this.account).subscribe((response) => {
+        this.cookieService.set('user_token', response.token);
+        this.cookieService.set('user_name', response.username);
+        this.dialogRef.close();
+      });
+    } else {
+      this.accountService.authorization(this.account).subscribe( (response) => {
+        this.cookieService.set('user_token', response.token);
+        this.cookieService.set('user_name', response.username);
+        this.dialogRef.close();
+      });
+    }
+
   }
 }

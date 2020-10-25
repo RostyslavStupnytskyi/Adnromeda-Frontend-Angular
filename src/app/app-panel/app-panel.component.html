@@ -1,5 +1,5 @@
 <div id="main-container">
-  <div id="logo-container" class="component">Andromeda</div>
+  <div id="logo-container" class="component" [routerLink]="''">Andromeda</div>
   <div class="divider">
     <a href="" [routerLink]="'admin'">Адмін</a>
   </div>
@@ -8,9 +8,14 @@
       <span>Мій профіль</span>
     </div>
     <div class="profile-menu">
-      <p>Початок</p>
-      <button>Увійти</button>
-      <button (click)="openRegistration()">Зареєструватися</button>
+      <div class="user-authorized-container" *ngIf="username">
+        <p>Ласкаво просимо, {{username}}</p>
+        <button (click)="logout()">Вийти</button>
+      </div>
+      <div class="user-not-authorized-container" *ngIf="!username">
+        <button (click)="openRegistration(false)">Увійти</button>
+        <button (click)="openRegistration(true)">Зареєструватися</button>
+      </div>
     </div>
   </div>
 

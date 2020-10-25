@@ -1,18 +1,18 @@
-
-$audiowideFont : 'Audiowide', cursive;
+$audiowideFont: 'Audiowide', cursive;
 //$montserratFont : 'Montserrat Alternates', sans-serif;
 //$robotoFont :'Roboto', sans-serif;
 //$playFont : 'Play', sans-serif;
 
-$navHeight : 60px;
+$navHeight: 60px;
 
-*{
+* {
   //color: #d92323;
   //color: #232946;
   font-size: 30px;
 
 }
-#main-container{
+
+#main-container {
   display: flex;
   height: $navHeight;
   width: 100%;
@@ -28,37 +28,38 @@ $navHeight : 60px;
   position: fixed;
 }
 
-#logo-container{
+#logo-container {
   font-family: $audiowideFont;
   font-size: 50px;
+  outline: none;
 }
 
-.divider{
+.divider {
   width: 45%;
 }
 
-button{
+button {
   font-size: 20px;
 }
 
-.component{
+.component {
   display: block;
-  margin-top:auto;
-  margin-bottom:auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-#user-info-container{
+#user-info-container {
   height: 100%;
 }
 
-#my-profile-title{
+#my-profile-title {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.profile-menu{
+.profile-menu {
   background-color: #323232;
   //color: #1A1C22;
   display: none;
@@ -66,12 +67,19 @@ button{
   padding-top: 20px;
   height: 500px;
   top: $navHeight;
+  width: 300px;
 }
 
-.profile-menu:hover{
+.profile-menu:hover {
   display: block;
+  background-color: #3e3e3e;
 }
 
-#my-profile-title:hover + .profile-menu{
-display: block;
+#my-profile-title:hover {
+  background-color: #3e3e3e;
+}
+
+#my-profile-title:hover + .profile-menu {
+  display: block;
+  background-color: #3e3e3e;
 }

@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Category} from '../../entity/category/category';
 import {GlobalConstants} from '../../common/global-constants';
+import {CookieService} from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CategoryService {
   private categoriesUrl = GlobalConstants.API_URL + 'category';
   test: any;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, public cookieService: CookieService) {
 
   }
 
@@ -39,25 +40,34 @@ export class CategoryService {
 
   public postCategory(category: Category): Observable<number> {
     const headers = {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.cookieService.get('user_token')
     };
     const body = {
       title: category.title,
       image: category.imageName
     };
-    return this.httpClient.post<number>(this.categoriesUrl, body);
+    return this.httpClient.post<number>(this.categoriesUrl, body, {headers});
   }
 
   public deleteCategory(id: number): Observable<any> {
-    return this.httpClient.delete(this.categoriesUrl + '?id=' + id);
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.cookieService.get('user_token')
+    };
+    return this.httpClient.delete(this.categoriesUrl + '?id=' + id, {headers});
   }
 
   public putCategory(category: Category): Observable<any> {
     const url = this.categoriesUrl + '?id=' + category.id;
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.cookieService.get('user_token')
+    };
     const body = {
       title: category.title,
       image: category.imageName
     };
-    return this.httpClient.put<number>(url, body);
+    return this.httpClient.put<number>(url, body, {headers});
   }
 }

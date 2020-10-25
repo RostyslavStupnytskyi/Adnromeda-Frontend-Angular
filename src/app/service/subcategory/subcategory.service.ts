@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Subcategory} from '../../entity/subcategory/subcategory';
 import {HttpClient} from '@angular/common/http';
 import {Category} from '../../entity/category/category';
+import {CookieService} from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import {Category} from '../../entity/category/category';
 export class SubcategoryService {
   private subcategoriesUrl = GlobalConstants.API_URL + 'subcategory';
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private cookieService: CookieService) {
   }
 
   // http://localhost:8080/category?direction=ASC&field=id&page=0&size=10
@@ -28,19 +29,28 @@ export class SubcategoryService {
 
   public postSubcategory(subcategory: Subcategory): Observable<number> {
     const headers = {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.cookieService.get('user_token')
     };
-    return this.httpClient.post<number>(this.subcategoriesUrl, subcategory);
+    return this.httpClient.post<number>(this.subcategoriesUrl, subcategory,{headers});
   }
 
   public deleteSubcategory(id: number): Observable<any> {
-    return this.httpClient.delete(this.subcategoriesUrl + '?id=' + id);
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.cookieService.get('user_token')
+    };
+    return this.httpClient.delete(this.subcategoriesUrl + '?id=' + id,{headers});
   }
 
   public putSubcategory(subcategory: Subcategory): Observable<any> {
     const url = this.subcategoriesUrl + '?id=' + subcategory.id;
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.cookieService.get('user_token')
+    };
     subcategory.id = undefined;
-    return this.httpClient.put<number>(url, subcategory);
+    return this.httpClient.put<number>(url, subcategory,{headers});
   }
 
 }
