@@ -19,6 +19,12 @@ const routes: Routes = [
     loadChildren: () => {
       return import('./user/user.module').then(m => m.UserModule);
     }
+  },
+  {
+    path: 'seller',
+    loadChildren: () => {
+      return import('./seller/seller.module').then(m => m.SellerModule);
+    }
   }
   // {path: '', redirectTo: '/admin'}
 ];
