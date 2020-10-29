@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SellerRegistration} from '../../entity/account/seller-registration/seller-registration';
 
 @Component({
   selector: 'app-seller-registration',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class SellerRegistrationComponent implements OnInit {
 
   constructor() { }
+
+  seller = new SellerRegistration();
 
   ngOnInit(): void {
   }

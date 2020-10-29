@@ -1,10 +1,14 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {SellerRegistrationComponent} from './seller-registration/seller-registration.component';
+import {UserComponent} from '../user/user.component';
+import {SellerComponent} from './seller.component';
 
 const routes: Routes = [
   {
-    path: 'registration', component: SellerRegistrationComponent
+    path: '', component: SellerComponent, children: [
+      {path: 'registration', component: SellerRegistrationComponent}
+    ]
   }
 ];
 
@@ -12,4 +16,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class SellerRoutingModule { }
+export class SellerRoutingModule {
+}
