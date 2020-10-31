@@ -1,0 +1,8 @@
+<div>
+  <input type="text" placeholder="Назва" [(ngModel)]="advertisement.title">
+  <input type="text" placeholder="Опис" [(ngModel)]="advertisement.description">
+  <input type="text" placeholder="Ціна" [(ngModel)]="advertisement.price">
+  <input type="file" accept="image/*" (change)="handleUpload($event)">
+
+  <button>Створити</button>
+</div>

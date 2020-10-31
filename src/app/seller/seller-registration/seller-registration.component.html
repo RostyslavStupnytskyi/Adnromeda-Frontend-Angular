@@ -1,10 +1,11 @@
-<div class="container">
-  <input type="text" placeholder="email" [(ngModel)]="seller.account.login">
-  <input type="text" placeholder="Пароль" [(ngModel)]="seller.account.password">
+<div class="container" *ngIf="!checkingConfirm">
+  <input type="text" placeholder="email" [(ngModel)]="seller.registrationRequest.login">
+  <input type="text" placeholder="Пароль" [(ngModel)]="seller.registrationRequest.password">
   <input type="text" placeholder="ІПН" [(ngModel)]="seller.taxpayerNumber">
   <input type="text" placeholder="Назва магазину" [(ngModel)]="seller.shopName">
-  <button>Зареєструватись</button>
-  <div class="email-confirmation">
-    <input type="text" placeholder="Код підтвердження">
-  </div>
+  <button (click)="registrationButtonClick()">Зареєструватись</button>
+</div>
+<div class="email-confirmation" *ngIf="checkingConfirm">
+  <input type="text" placeholder="Код підтвердження" [(ngModel)]="confirmCode">
+  <button (click)="sendConfirmCode()">Надіслати</button>
 </div>

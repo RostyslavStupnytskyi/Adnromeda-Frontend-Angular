@@ -1,7 +1,7 @@
 import {Account} from '../account';
 
 export class SellerRegistration {
-  account: Account;
+  registrationRequest: Account;
   taxpayerNumber: string;
   shopName: string;
 }

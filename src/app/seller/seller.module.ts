@@ -5,10 +5,11 @@ import { SellerRoutingModule } from './seller-routing.module';
 import { SellerComponent } from './seller.component';
 import { SellerRegistrationComponent } from './seller-registration/seller-registration.component';
 import {FormsModule} from '@angular/forms';
+import { CreateAdvertisementComponent } from './create-advertisement/create-advertisement.component';
 
 
 @NgModule({
-  declarations: [SellerComponent, SellerRegistrationComponent],
+  declarations: [SellerComponent, SellerRegistrationComponent, CreateAdvertisementComponent],
   imports: [
     CommonModule,
     SellerRoutingModule,

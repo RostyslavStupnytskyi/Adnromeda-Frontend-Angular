@@ -18,11 +18,16 @@ export class AccountService {
 
   authorization(account: Account): Observable<any> {
     const request = {
-      login : account.login,
+      login: account.login,
       password: account.password
     };
     const url = GlobalConstants.API_URL + 'account/login';
 
     return this.httpClient.post(url, request);
+  }
+
+  confirmingCode(id: string, code: string): Observable<any> {
+    const url = GlobalConstants.API_URL + 'account?code=' + code + '&id=' + id;
+    return this.httpClient.put(url, null);
   }
 }

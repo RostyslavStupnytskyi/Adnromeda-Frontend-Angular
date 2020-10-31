@@ -55,12 +55,14 @@ export class AccountDialogComponent {
       this.accountService.registerUser(this.account).subscribe((response) => {
         this.cookieService.set('user_token', response.token);
         this.cookieService.set('user_name', response.username);
+        this.cookieService.set('user_role', response.userRole);
         this.dialogRef.close();
       });
     } else {
       this.accountService.authorization(this.account).subscribe( (response) => {
         this.cookieService.set('user_token', response.token);
         this.cookieService.set('user_name', response.username);
+        this.cookieService.set('user_role', response.userRole);
         this.dialogRef.close();
       });
     }

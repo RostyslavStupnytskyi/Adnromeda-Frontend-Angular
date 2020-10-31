@@ -16,6 +16,12 @@
         <button (click)="openRegistration(false)">Увійти</button>
         <button (click)="openRegistration(true)">Зареєструватися</button>
       </div>
+      <div [ngSwitch]="userRole">
+        <div *ngSwitchCase="'ROLE_SELLER'">
+          <a [routerLink]="'/seller/create-advertisement'">Створити оголошення</a>
+        </div>
+      </div>
+
     </div>
   </div>
 

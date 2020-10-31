@@ -19,6 +19,7 @@ export class AppPanelComponent implements OnInit {
   }
 
   username: string;
+  userRole: string;
 
   ngOnInit(): void {
     this.getUserInfo();
@@ -40,11 +41,14 @@ export class AppPanelComponent implements OnInit {
   }
 
   getUserInfo(): void {
-    this.cookieService.get('user_name') ? this.username = this.cookieService.get('user_name') : this.username = undefined;
+    this.username = this.cookieService.get('user_name') ? this.cookieService.get('user_name') : undefined;
+    this.userRole = this.cookieService.get('user_role') ? this.cookieService.get('user_role') : undefined;
   }
 
   logout(): void {
+    console.log(this.username);
     this.cookieService.delete('user_name');
+    this.cookieService.delete('user_role');
     this.getUserInfo();
   }
 }
