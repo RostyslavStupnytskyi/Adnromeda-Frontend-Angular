@@ -1,7 +1,10 @@
+import {Property} from '../property/property';
+
 export class PropertiesRequest {
-  properties: {
-    name: string;
-    value: string;
-  };
+  properties: Array<Property>;
   advertisementId: number;
+
+  constructor() {
+    this.properties = new Array<Property>();
+  }
 }

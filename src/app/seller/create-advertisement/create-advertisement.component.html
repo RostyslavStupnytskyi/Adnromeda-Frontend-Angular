@@ -2,7 +2,25 @@
   <input type="text" placeholder="Назва" [(ngModel)]="advertisement.title">
   <input type="text" placeholder="Опис" [(ngModel)]="advertisement.description">
   <input type="text" placeholder="Ціна" [(ngModel)]="advertisement.price">
+  <input type="file" accept="image/*" (change)="handleMainUpload($event)">
+
+  <input type="file" accept="image/*" (change)="handleUpload($event)">
+  <input type="file" accept="image/*" (change)="handleUpload($event)">
+  <input type="file" accept="image/*" (change)="handleUpload($event)">
   <input type="file" accept="image/*" (change)="handleUpload($event)">
 
+  <div>
+    <div>
+      <input type="text" placeholder="назва" #propertyName>
+      <input type="text" placeholder="значення" #propertyValue>
+      <button (click)="addProperty()">Додати</button>
+    </div>
+    <div>
+      <div *ngFor="let property of properties.properties">
+        <label>{{property.name}}</label>
+        <label>{{property.value}}</label>
+      </div>
+    </div>
+  </div>
   <button>Створити</button>
 </div>
