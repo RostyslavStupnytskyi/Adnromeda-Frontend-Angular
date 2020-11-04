@@ -2,6 +2,12 @@
   <input type="text" placeholder="Назва" [(ngModel)]="advertisement.title">
   <input type="text" placeholder="Опис" [(ngModel)]="advertisement.description">
   <input type="text" placeholder="Ціна" [(ngModel)]="advertisement.price">
+  <select (change)="categorySelect()" [(ngModel)]="categoryId">
+    <option *ngFor="let category of categories" value="{{category.id}}">{{category.title}}</option>
+  </select>
+  <select [(ngModel)]="advertisement.subcategoryId">
+    <option *ngFor="let subcategory of subcategories" value="{{subcategory.id}}">{{subcategory.title}}</option>
+  </select>
   <input type="file" accept="image/*" (change)="handleMainUpload($event)">
 
   <input type="file" accept="image/*" (change)="handleUpload($event)">
@@ -16,11 +22,12 @@
       <button (click)="addProperty()">Додати</button>
     </div>
     <div>
-      <div *ngFor="let property of properties.properties">
+      <div *ngFor="let property of propertiesRequest.properties">
         <label>{{property.name}}</label>
         <label>{{property.value}}</label>
+        <button (click)="deleteProperty(property)">Видалити</button>
       </div>
     </div>
   </div>
-  <button>Створити</button>
+  <button (click)="createButtonClick()">Створити</button>
 </div>

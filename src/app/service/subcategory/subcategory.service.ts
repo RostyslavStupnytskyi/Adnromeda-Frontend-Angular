@@ -22,6 +22,11 @@ export class SubcategoryService {
     return this.httpClient.get<Subcategory[]>(url);
   }
 
+  public getSubcategoriesByCategoryId(id: number): Observable<Array<Subcategory>> {
+    const url = this.subcategoriesUrl + '/category?id=' + id;
+    return this.httpClient.get<Array<Subcategory>>(url);
+  }
+
   public getOne(id: number): Observable<Subcategory> {
     const url = this.subcategoriesUrl + '/one?id=' + id;
     return this.httpClient.get<Subcategory>(url);

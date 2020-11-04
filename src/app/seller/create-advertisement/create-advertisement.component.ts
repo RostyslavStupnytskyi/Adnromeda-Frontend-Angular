@@ -2,6 +2,11 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {AdvertisementRequest} from '../../entity/advertisement/advertisementRequest/advertisement-request';
 import {PropertiesRequest} from '../../entity/advertisement/propertiesRequest/properties-request';
 import {Property} from '../../entity/advertisement/property/property';
+import {AdvertisementService} from '../../service/advertisement/advertisement.service';
+import {CategoryService} from '../../service/category/category.service';
+import {SubcategoryService} from '../../service/subcategory/subcategory.service';
+import {Category} from '../../entity/category/category';
+import {Subcategory} from '../../entity/subcategory/subcategory';
 
 @Component({
   selector: 'app-create-advertisement',
@@ -10,11 +15,16 @@ import {Property} from '../../entity/advertisement/property/property';
 })
 export class CreateAdvertisementComponent implements OnInit {
 
-  constructor() {
+  constructor(private advertisementService: AdvertisementService,
+              private categoryService: CategoryService,
+              private subcategoryService: SubcategoryService) {
   }
 
   advertisement = new AdvertisementRequest();
-  properties = new PropertiesRequest();
+  propertiesRequest = new PropertiesRequest();
+  categories: Array<Category>;
+  subcategories: Array<Subcategory>;
+  categoryId: number;
 
   @ViewChild('propertyName')
   propertyNameInput: ElementRef;
@@ -23,6 +33,10 @@ export class CreateAdvertisementComponent implements OnInit {
   propertyValueInput: ElementRef;
 
   ngOnInit(): void {
+    this.categoryService.getCategories().subscribe((response) => {
+      this.categories = response;
+      console.log(response);
+    });
   }
 
   handleMainUpload(event): void {
@@ -46,8 +60,29 @@ export class CreateAdvertisementComponent implements OnInit {
   addProperty(): void {
     const propertyName = this.propertyNameInput.nativeElement.value;
     const propertyValue = this.propertyValueInput.nativeElement.value;
-    this.properties.properties.push(new Property(propertyName, propertyValue));
+    this.propertiesRequest.properties.push(new Property(propertyName, propertyValue));
     this.propertyNameInput.nativeElement.value = '';
     this.propertyValueInput.nativeElement.value = '';
+  }
+
+  deleteProperty(property: Property): void {
+    const index = this.propertiesRequest.properties.indexOf(property);
+    if (index > -1) {
+      this.propertiesRequest.properties.splice(index, 1);
+    }
+  }
+
+  createButtonClick(): void {
+    this.advertisementService.postAdvertisement(this.advertisement).subscribe((response) => {
+      this.propertiesRequest.advertisementId = response;
+      this.advertisementService.postProperties(this.propertiesRequest).subscribe(() => {
+      });
+    });
+  }
+
+  categorySelect(): void {
+    this.subcategoryService.getSubcategoriesByCategoryId(this.categoryId).subscribe((response) => {
+      this.subcategories = response;
+    });
   }
 }
