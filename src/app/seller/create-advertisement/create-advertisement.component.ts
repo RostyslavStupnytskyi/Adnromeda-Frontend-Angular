@@ -73,6 +73,7 @@ export class CreateAdvertisementComponent implements OnInit {
   }
 
   createButtonClick(): void {
+    console.log(this.advertisement);
     this.advertisementService.postAdvertisement(this.advertisement).subscribe((response) => {
       this.propertiesRequest.advertisementId = response;
       this.advertisementService.postProperties(this.propertiesRequest).subscribe(() => {
