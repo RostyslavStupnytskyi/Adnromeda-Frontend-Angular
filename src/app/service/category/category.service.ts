@@ -41,7 +41,7 @@ export class CategoryService {
   public postCategory(category: Category): Observable<number> {
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.cookieService.get('user_token')
+      // 'Authorization': 'Bearer ' + this.cookieService.get('user_token') TODO
     };
     const body = {
       title: category.title,
